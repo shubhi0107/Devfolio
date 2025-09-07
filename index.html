@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DevFolio — Interactive HTML & CSS Project</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="site">
+    <header>
+      <a class="brand" href="#home">
+        <div class="logo">DF</div>
+        <div>
+          <div style="font-weight:800">DevFolio</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:-4px">HTML & CSS Practice</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+        <button id="themeToggle" class="btn">Toggle Theme</button>
+        <a class="btn" href="#projects">View</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="blob"></div>
+        <div class="hero-inner">
+          <div class="intro">
+            <h1>Craft modern responsive UI — practice project to deploy on Vercel</h1>
+            <p class="lead">This project demonstrates advanced CSS patterns, responsive grids, and interactive UI elements.</p>
+            <div class="cta">
+              <button class="primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">See Projects</button>
+              <button class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="filters">
+          <button class="chip" data-filter="all">All</button>
+          <button class="chip" data-filter="ui">UI/UX</button>
+          <button class="chip" data-filter="css">CSS Effects</button>
+          <button class="chip" data-filter="tools">Tools</button>
+        </div>
+        <div class="gallery" id="gallery">
+          <article class="card" data-tags="ui css">
+            <div class="thumbnail" style="background:#7c5cff;height:120px;border-radius:8px"></div>
+            <div><strong>Glassmorphism UI</strong><button class="btn" onclick="openModal(event,this)">Open</button></div>
+          </article>
+          <article class="card" data-tags="css">
+            <div class="thumbnail" style="background:#3b82f6;height:120px;border-radius:8px"></div>
+            <div><strong>CSS Art Scene</strong><button class="btn" onclick="openModal(event,this)">Open</button></div>
+          </article>
+        </div>
+        <div id="modal" class="modal">
+          <div class="modal-inner">
+            <button class="btn" onclick="closeModal()">Close</button>
+            <div id="modalContent"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills">
+        <h3>Skills</h3>
+        <div class="skill"><span>HTML</span><div class="bar"><div class="fill" style="--w:95%"></div></div></div>
+        <div class="skill"><span>CSS</span><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+        <div class="skill"><span>Responsive</span><div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h3>Contact</h3>
+        <form id="contactForm">
+          <input id="name" placeholder="Your name" required />
+          <input id="email" type="email" placeholder="Email" required />
+          <textarea id="message" rows="4" placeholder="Message..." required></textarea>
+          <button type="submit" class="primary">Send</button>
+          <div id="formStatus"></div>
+        </form>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

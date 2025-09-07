@@ -1,0 +1,133 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #98a0b3;
+  --accent: #7c5cff;
+  --accent-2: #3ddc97;
+  --txt: #e6eef8;
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--txt);
+}
+
+header, section, footer {
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  background: none;
+  border: 1px solid var(--muted);
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius);
+  color: var(--txt);
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.hero .cta {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.primary {
+  background: var(--accent);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  color: white;
+  cursor: pointer;
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.projects .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+.skill {
+  margin: 1rem 0;
+}
+
+.skill .bar {
+  background: #1c2233;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 8px;
+}
+
+.skill .fill {
+  background: var(--accent-2);
+  width: var(--w);
+  height: 100%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-inner {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+/* Light theme toggle */
+body.light {
+  --bg: #f8f9fb;
+  --card: #fff;
+  --txt: #222;
+  --muted: #555;
+}
